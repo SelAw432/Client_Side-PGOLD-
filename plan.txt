@@ -1,0 +1,83 @@
+Start Login Page: 
+
+###-------LOGIN PAGE------------###
+Enter in:
+
+
+-----Login Page------------
+THE UKS Ultimate guide to Covid
+
+-area (Help determine whether or not you are at risk)
+       +Create a drop down menu to select your area
+
+-name (Will be later on used to address user in the webpage)
+
+-age (Tell you if you are at risk)
+       +Create a drop down menu that helps you select your age range
+
+This information along with age and area can be used to create 
+an algorithm that makes a meter gauge that measures your risk.
+
+
+
+------Welcome Page----------
+After entering in your Details, You are welcomed and taking to the home page.
+Welcome page displays your name with some animations. 
+Isotopes JS
+
+
+
+------Home Page-------------
+You are then taking to the home page. The home page will welcome 
+you by name at the top right corner of the home page. 
+
++   The home page should have a caroussel with slides that brings up the 
+    latest covid news beside it.
+
+
++   Should have navigation bar with the following sublinks.
+-Top Stories
+-Travel (Should Include the Public Transport Services) 
+-Latest news
+-World
+-Most Viewed
+-A Search bar
+- More :
+               + News by Area
+               + Economy of the Country
+               + Experts
+-Guidelines
+
+
+
++   The home page should display the graphs of the COVID situation at that Area
+    Under it the user should be able to switch between the graphs that are present.
+    So user can switch to COVID situation by year, month, weeks.
+
+    The User should also be able to see fatality rate, recovery rate, Spread rate.
+    
+
+
++   There should be some basic information on the guidelines available and a link 
+    to send you to the actual guidelines page. In the guidlines page there should 
+    to send you to the government guidelines website. The guide lines page should 
+    contain a video as well.
+
+
++   There should also be short paraphrases from famous doctors around the World.
+    With a link that takes you to expert advice
+
+
++   There should also be a link to view all the hospitals present in your area. 
+    The link takes you to google maps.
+
+
++   There can be a short video of how to navigate the page that takes you to a
+    youtube link of what and what you can do on the webpage.
+
+
++   There should be stories on all the various categories of the navbar with links 
+    to take you to the actual page. 
+
+
++   There should be a simple footer at the bottom of the page. 
