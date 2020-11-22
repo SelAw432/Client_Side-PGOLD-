@@ -15,6 +15,8 @@ THE UKS Ultimate guide to Covid
 -age (Tell you if you are at risk)
        +Create a drop down menu that helps you select your age range
 
+
+When done Log in the Loading sign pops up and gives a checkmark when everything is alright.
 This information along with age and area can be used to create 
 an algorithm that makes a meter gauge that measures your risk.
 
