@@ -106,6 +106,6 @@ Usability and clarity
 Interface: 20 marks
 Presentation, design and usability of user interface:
 - Interface style and design was attractive and appropriate for the domain of
-application (colours, fonts, page element position, etc.)
+  application (colours, fonts, page element position, etc.)
 - Appropriate on-page controls/interactivity were applied
-- Interface was usable: easy to use, easy to learn, intuitive, interactive, responsive
+- Interface was usable: easy to use, easy to learn, intuitive, interactive,      responsive

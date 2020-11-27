@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #e6e4e4;
+}
+
+.row{
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 12px 18px 25px grey;
+}
+
+img {
+    border-top-left-radius: 30px;
+}
+
+
+.signin {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: auto;
+  
+  }
+
+  .signin input[type="text"] {
+    width: 400px;
+    margin-bottom: 20px;
+   
+  }
+
+
+  .submit {
+      background-color: whitesmoke;
+  }
+
+  .btn{
+      font-weight: bold;
+      color: rgb(126, 126, 252);
+  }

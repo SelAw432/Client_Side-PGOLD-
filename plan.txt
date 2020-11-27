@@ -21,11 +21,18 @@ This information along with age and area can be used to create
 an algorithm that makes a meter gauge that measures your risk.
 
 
+______Plugins_______________
+
+SVG 
+Isotope JS
+d3JS
+
 
 ------Welcome Page----------
 After entering in your Details, You are welcomed and taking to the home page.
 Welcome page displays your name with some animations. 
 Isotopes JS
+
 
 
 
@@ -45,10 +52,8 @@ you by name at the top right corner of the home page.
 -Most Viewed
 -A Search bar
 - More :
-               + News by Area
-               + Economy of the Country
                + Experts
--Guidelines
+               + Guidelines
 
 
 
