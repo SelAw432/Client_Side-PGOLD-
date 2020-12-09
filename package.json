@@ -1,0 +1,28 @@
+{
+  "name": "client_side-pgold-",
+  "version": "1.0.0",
+  "description": "website",
+  "main": "script.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SelAw432/Client_Side-PGOLD-.git"
+  },
+  "keywords": [
+    "website",
+    "code",
+    "quality",
+    "eslint"
+  ],
+  "author": "william",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SelAw432/Client_Side-PGOLD-/issues"
+  },
+  "homepage": "https://github.com/SelAw432/Client_Side-PGOLD-#readme",
+  "devDependencies": {
+    "eslint": "^7.14.0"
+  }
+}

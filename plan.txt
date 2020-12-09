@@ -26,7 +26,17 @@ ______Plugins_______________
 SVG 
 Isotope JS
 d3JS
+Sunburst
+Zoomable sunburst
+CSV file imports
+Python -m http.server 8000 for CORS errors
+JS Doc
+eslint
 
+
+
+____Tips_________________
+Add some comments
 
 ------Welcome Page----------
 After entering in your Details, You are welcomed and taking to the home page.
