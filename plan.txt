@@ -32,8 +32,11 @@ CSV file imports
 Python -m http.server 8000 for CORS errors
 JS Doc
 eslint
-
-
+befunky.com(resize images)
+Google maps API javascript, Geocharts
+Smooth scroll
+Cool Loading animation
+Build dashboard to display COVID data
 
 ____Tips_________________
 Add some comments

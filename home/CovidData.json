@@ -1,0 +1,17 @@
+[
+    {"month" : "February 2020", "deaths": 200, "cases":300,  "recovery": 80, "transmission": "low"},
+    {"month" : "March 2020", "deaths": 300, "cases":500,  "recovery": 100, "transmission": "moderate"},
+    {"month" : "April 2020", "deaths": 400, "cases":1000,  "recovery": 300, "transmission": "high"},
+    {"month" : "June 2020", "deaths": 800, "cases":2000,  "recovery": 600, "transmission": "very high"},
+    {"month" : "July 2020", "deaths": 600, "cases":3000,  "recovery": 1000, "transmission": "high"},
+    {"month" : "August 2020", "deaths": 500, "cases":8000,  "recovery": 3000, "transmission": "very high"},
+    {"month" : "September 2020", "deaths": 400, "cases":5000,  "recovery": 6000, "transmission": "moderate"},
+    {"month" : "August 2020", "deaths": 300, "cases":4000,  "recovery": 4000, "transmission": "low"},
+    {"month" : "October 2020", "deaths": 400, "cases":3000,  "recovery": 3000, "transmission": "moderate"},
+    {"month" : "November 2020", "deaths": 380, "cases":2000,  "recovery": 1000, "transmission": "moderate"},
+    {"month" : "December 2020", "deaths": 500, "cases":5000,  "recovery": 2000, "transmission": "high"},
+    {"month" : "January 2021", "deaths": 700, "cases":9000,  "recovery": 5700, "transmission": "very high"},
+    {"month" : "February 2021", "deaths": 300, "cases":5000,  "recovery": 8000, "transmission": "moderate"}
+
+    
+]

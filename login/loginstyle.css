@@ -1,0 +1,292 @@
+/* ----------------------------Basic Page With Textbox CSS editting -----------------------------*/
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    /* padding-top: 40px;
+    padding-bottom: 40px; */
+    font-family: 'Roboto', sans-serif;
+    /* background: linear-gradient(to left, #8942a8, #ba382f );
+    width: 100%;
+    height: 100%; */
+}
+
+.row{
+    background-color: white;
+    border-top-left-radius: 30px !important; 
+    border-bottom-left-radius: 30px !important;
+    border-top-right-radius: 30px !important; 
+    border-bottom-right-radius: 30px !important;
+    
+}
+
+.doc {
+    border-top-left-radius: 30px !important; 
+    border-bottom-left-radius: 30px !important;
+    
+}
+
+
+.signin {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: auto;
+  
+  }
+
+  .signin input[type="text"] {
+    width: 400px;
+    margin-bottom: 20px;
+   
+  }
+
+
+  .submit {
+      background-color: whitesmoke;
+  }
+
+  .btn{
+      font-weight: bold;
+      color: rgb(126, 126, 252);
+  }
+
+
+  .form-control {
+      display: block;
+      width: 500px;
+      border-radius: 0;
+      border-width: 0 0 1px 0 !important;
+      border-style: solid !important;
+      border-color: rgb(172, 225, 250);
+      
+  }
+
+  .Form {
+      position: absolute;
+  }
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+
+    *{
+        padding: 0;
+        margin: 0;
+        
+        
+    }
+    
+    body {
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(to left, rgb(59, 147, 219),whitesmoke);
+        /* padding: 0;
+        margin: 0; */
+    }   
+    
+    .row{
+        background-color: white;
+    }
+    
+    
+    .signin {
+        width: 100%;
+        max-width: 400px;
+        padding: 15px;
+        margin: auto;
+      
+      }
+    
+      .signin input[type="text"] {
+        max-width: 400px;
+        margin-bottom: 20px;
+        font-size: medium;
+       
+      }
+    
+    
+      .submit {
+          background-color: whitesmoke;
+      }
+    
+      .btn{
+          font-weight: bold;
+          color: rgb(126, 126, 252);
+      }
+    
+    
+      .form-control {
+          display: block;
+          width: 100%;
+          font-size: medium;
+          border-radius: 0;
+          border-width: 0 0 1px 0 !important;
+          border-style: solid !important;
+          border-color: rgb(172, 225, 250);
+          
+      }
+    
+      .pic {
+        border-top-left-radius: 30px !important; 
+        border-top-right-radius: 30px !important; 
+        border-bottom-left-radius: 0px !important;
+      }
+
+      .animation{
+        z-index: 2;
+        position: fixed;
+        height: 100vh;  
+        
+      }
+      
+
+}
+
+
+  /* --------------------------Animation Editting starts here----------------------------- */
+
+  .animation{
+      background: linear-gradient(to left, rgb(59, 147, 219),whitesmoke);
+      width: 100%;
+      height: 100vh;
+      z-index: -2;
+  }
+
+  .boxes{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+  }
+
+  .boxes li{
+      position: absolute;
+      display: block;
+      list-style: none;
+      width: 25px;
+      height: 25px;
+      background: rgba(255, 255, 255, 0.2);
+      animation: animate 30s linear infinite;
+      bottom: -210px;
+      clip-path: polygon(0% 0%, 0% 100%, 20% 100%, 20% 20%, 80% 20%, 80% 80%, 20% 80%, 20% 100%, 100% 100%, 100% 0%);
+  }
+
+  .boxes li:nth-child(1){
+      left: 86%;
+      width: 80px;
+      height: 80px;
+      animation-delay: 0s;
+  }
+
+
+  .boxes li:nth-child(2){
+    left: 12%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 1.5s;
+    animation-duration: 10s;
+}
+
+
+.boxes li:nth-child(3){
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 5.5s;
+    
+}
+
+
+.boxes li:nth-child(4){
+    left: 42%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 15s;
+}
+
+
+.boxes li:nth-child(5){
+    left: 65%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 0s;
+    animation-duration: 15s;
+}
+
+.boxes li:nth-child(6){
+    left: 15%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3.5s;
+}
+
+.boxes li:nth-child(7){
+    left: 85%;
+    width: 200px;
+    height: 200px;
+    animation-delay: 5.5s;
+    animation-duration: 20s;
+}
+
+.boxes li:nth-child(8){
+    left: 75%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 0s;
+    animation-duration: 20s;
+}
+
+.boxes li:nth-child(9){
+    left: 65%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 2.5s;
+    animation-duration: 20s;
+    border-radius: 100px;
+}
+
+.boxes li:nth-child(10){
+    left: 95%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 2.5s;
+    animation-duration: 20s;
+    border-radius: 100px;
+}
+
+.boxes li:nth-child(11){
+    left: 35%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 2.9s;
+    animation-duration: 20s;
+    border-radius: 100px;
+}
+
+
+
+
+@keyframes animate{
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}

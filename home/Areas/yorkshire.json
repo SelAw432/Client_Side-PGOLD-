@@ -1,0 +1,7 @@
+[
+    {"month" : "November 2020", "cases":300, "recovery": 100, "deaths": 500 },
+    {"month" : "December 2020", "cases":200, "recovery": 200, "deaths": 200 },
+    {"month" : "January 2021", "cases":700, "recovery": 400, "deaths": 400 },
+    {"month" : "February 2021", "cases":600, "recovery": 500, "deaths": 200 }
+      
+]
