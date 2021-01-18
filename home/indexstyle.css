@@ -11,7 +11,7 @@
     margin-left: auto;
     margin-right:auto ;
     padding-left: 20px;
-    width: 45%;
+    width: 50%;
     margin-bottom: 0;
     padding-top: 10px;
 }
@@ -39,11 +39,25 @@
     margin-right:auto ;
     display: block;
 }
-@media only screen and (max-width: 800px){
+
+
+@media only screen and (max-width: 1150px){
     .navbar {
-        width: 100%;
-        padding:0;
-        margin: 0;
+        width: 170%;
+        overflow: hidden;       
+    }
+}
+
+@media only screen and (max-width: 355px){
+    .navbar {
+        width: 300%;
+        overflow: inherit;      
+    }
+    
+    .navbar ul {
+        float: none;
+        display: inline;
+        text-align: left;  
         
     }
 }
@@ -150,10 +164,11 @@
 
 
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 1150px){
     .carousel{
         width: 100%;
-        height: 400px;
+        height: 200px;
+        overflow: hidden;
     }
     .carousel-text{
         max-width: 100%;
@@ -179,7 +194,7 @@
 
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1150px){
     
     .carousel-text{
         max-width: 70%;
@@ -197,14 +212,26 @@
     }
 
     .carousel{
-        width: 100%;
+        width: 170%;
         height: 600px;
+        align-items: center;
+        text-align: center;
     }
-
-
 }
 
+@media only screen and (max-width: 359px){
+    .carousel{
+        width: 300%;
+        height: 400px;
+        overflow: hidden;
+    }
 
+    .carousel-text{
+        max-width: 30%;
+        padding: 1rem;
+    }
+
+}
 /* ________________________________LATEST STORIES STYLING____________________________________ */
 .latestStories h5{
     text-align: center;
@@ -289,6 +316,24 @@
 }
 
 
+
+@media only screen and (max-width: 560px){
+    .lnews{
+        width: 250px;
+        height: 400px;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .latestStories p{
+        width: 200px;
+        padding: 5px 2px 1px 15px;
+        font-weight: 900;
+        word-spacing: 3px;
+        font-size: 12px;
+    }
+}
+
 /* ________________________________TOP STORIES STYLING____________________________________ */
 .topStories h5{
     text-align: center;
@@ -368,6 +413,22 @@
     transform: scaleX(3) translateX(20px);   
 }
 
+@media only screen and (max-width: 560px){
+    .topnews{
+        width: 250px;
+        height: 400px;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .topStories p{
+        width: 200px;
+        padding: 5px 2px 1px 15px;
+        font-weight: 900;
+        word-spacing: 3px;
+        font-size: 12px;
+    }
+}
 /* ________________________________Graphs____________________________________ */
 
 
@@ -381,7 +442,7 @@
 
 
 .maps button{
-    margin: 80px;
+    margin: 20px;
     margin-top: 20px;
 }
 
@@ -390,6 +451,74 @@
     padding-bottom: 50px;
 }
 
+
+@media only screen and (max-width: 560px){
+    
+    .maps{
+        height: 800px;
+        width: 300px;
+        float: right;
+        position: relative;
+        z-index: 2;
+        display: inline;
+        
+    }
+
+    .maps button{
+        text-align:center;
+        margin: 5px;
+        margin-left: 100px;
+        width: 300px;
+        margin-top: 0;
+        
+    }
+
+    .chartbox{
+        width:500px;
+        height: 300px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .maps h2{
+        text-align: center;
+        margin-left: 50px;
+        width: 320px;
+    }
+
+}
+
+@media only screen and (max-width: 770px){
+
+    .maps button{
+        
+        margin: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 360px){
+
+    .maps button{
+        
+        margin: 10px;
+        text-align: center;
+        margin-left: 70px;
+        
+    }
+
+    .maps{
+        height:700px;
+        margin: 100px;
+    }
+
+    .chartbox{
+        width:500px;
+        height: 300px;
+        margin-left: 30px;
+        padding: 20px;
+    }
+}
 /* ________________________________Quotes____________________________________ */
 
 
@@ -426,6 +555,56 @@ font-size: 15px;
 }
 
 
+@media only screen and (max-width: 560px){
+    
+    .experts .row div{
+        
+        position: relative;
+        display: block;
+
+    }
+}
+
+
+@media only screen and (max-width: 1000px){
+    
+    .experts .row {
+        
+        position: relative;
+        display: inline;
+        
+    }
+}
+
+@media only screen and (max-width: 369px){
+    
+    .experts{
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right:10px;
+        padding-bottom: 10px;
+        margin-left: 50px;
+    }
+    
+    
+    .experts p{
+        width: 200px;
+        text-align: center;
+        font-size: 12px;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    
+    .experts img{
+        width: 200px;
+        height: 150px;
+        padding: 10px;
+        padding-left:15px;
+        margin: 10px;
+        align-items: center;
+        
+    }
+}
 
 /* ________________________________Guidelines____________________________________ */
 
@@ -466,7 +645,17 @@ font-size: 15px;
     display: inline;
 }
 
-
+@media only screen and (max-width: 1150px){
+    
+    .guidelines{
+        
+        position: relative;
+        display: block;
+        width: 170%;
+        
+        
+    }
+}
 
 /* ________________________________NHS ADVICE____________________________________ */
 
@@ -567,6 +756,30 @@ font-size: 15px;
     transform: translateY(-1em);  
 } 
 
+
+@media only screen and (max-width: 1150px){
+    
+    .nhs-ad img{
+        
+        position: relative;
+        display: block;
+        width: 170%;
+        height: 600px;
+    }
+
+    .nhs-ad h3{
+
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .nhs-ad h5{
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+
 /* ________________________________Footer____________________________________ */
 
  .footer{
@@ -607,6 +820,19 @@ font-size: 15px;
 
 }
 
+@media only screen and (max-width: 800px){
+    
+    .footer{
+        width: 170%;
+    }
+}
+
+@media only screen and (max-width: 359px){
+    
+    .footer{
+        width: 300%;
+    }
+}
 
 /* ______________________________tpage__________________________ */
 
@@ -636,8 +862,6 @@ font-size: 15px;
 .tpage ul{
     font-size: 20px;
 }
-
-
 
 /* ______________________________More page__________________________ */
 

@@ -122,7 +122,8 @@ const create = (data,ylabl) => {
             .append('svg')
             .attr("viewBox", [0, 0, width, height])
             .attr('width', width - margin.left - margin.bottom)
-            .attr('height', height - margin.top - margin.bottom);
+            .attr('height', height - margin.top - margin.bottom)
+            .attr('class', 'chartbox');
             
             
     const yScale = d3.scaleLinear()
@@ -190,4 +191,15 @@ const create = (data,ylabl) => {
         .attr('class','y Axis')
         .call(yAxis);
 
+}
+
+
+function responsive(){
+    var icon= document.getElementsByClassName('navbar')
+
+    if (icon.className === 'navbar'){
+        icon.className +='responsive';
+    } else{
+        icon.className = 'navbar';
+    }
 }
