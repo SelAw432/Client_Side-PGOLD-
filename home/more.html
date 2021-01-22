@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +25,7 @@
       <ul>
         <li><a href="lateststories.html">Latest News</a></li>
         <li><a href="topstories.html">Top Stories</a></li>
-        <li><a href>World</a></li>
+        <li><a href>Economy</a></li>
         <li><a href>Travel</a></li>
         <li><a href="more.html">More</a></li>
       </ul>
@@ -36,30 +35,38 @@
     <div class="container more">
         <div class="row">
 
-            <div class="col-md-4 cards">
+            <div class="col-lg-4 cards">
                 <p> Number of Deaths:</p>
                 <p class="num" id="deaths"> - </p>
             </div>
 
-            <div class="col-md-4 cards">
+            <div class="col-lg-4 cards">
                 <p> Total number of Recorded Cases:</p>
                 <p class="num" id="recCases">  </p>
             </div>
 
-            <div class="col-md-4 cards">
+            <div class="col-lg-4 cards">
                 <p> Number of Recoveries:</p>
                 <p class="num" id="recovery"> - </p>
             </div>
 
         </div>
 
+        <!-- <div class="row">
+            <div class="col-lg-12 cards">
+                <p> Available hospitals:</p>
+                <ul id="hospitals"> - </ul>
+            </div>
+        </div> -->
 
         <div class="row">
-            <div class="col-md-6 inChart">
+            <div class="col-lg-6 inChart">
                 <canvas id="myChart" width="300" height="200"></canvas>
-            </div>
+                <a href="covidMAP.html"><button class="btn btn-outline-warning" >MAP  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button></a>
+            
+        </div>
 
-            <div class="col-md-6 inForm">
+            <div class="col-lg-6 inForm">
                 <form>
                     <label for="name">Name</label><input id="name" type="text" placeholder="Your name please?"><br>
                     <label for="age">Age</label><input id="age" type="text" placeholder="How old are you?" required><br>
@@ -85,6 +92,15 @@
                 <p>RISK METRE:<div id="risk"></div></p>
                 
                 <p id="lilinstructs"> PLEASE ENTER YOUR AGE IN INTEGERS TO OBTAIN AN ACCURATE MEASURE OF RISK</p>
+
+            
+                    <div>
+                        <p> Available hospitals:</p>
+                        <ul id="hospitals"> - </ul>
+                    </div>
+                
+                <button class="btn btn-outline-success" >More on Hospitals <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                
             </div>
         </div>
     </div>

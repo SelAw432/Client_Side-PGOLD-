@@ -820,7 +820,7 @@ font-size: 15px;
 
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 1150px){
     
     .footer{
         width: 170%;
@@ -861,6 +861,29 @@ font-size: 15px;
 
 .tpage ul{
     font-size: 20px;
+    
+}
+
+caption{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 8px;
+}
+
+@media only screen and (max-width: 991px){
+    
+    .tpage p{
+        padding-left: 0px;
+        padding-right: 0px;
+        font-size: 15px;
+    }
+
+    .tpage h1{
+        font-size:45px ;
+    }
+
+    .tpage h4{
+        font-size: 20px;
+    }
 }
 
 /* ______________________________More page__________________________ */
@@ -916,4 +939,15 @@ font-size: 15px;
 
 .more #lilinstructs{
     font-size: 10px;
+}
+
+@media only screen and (max-width: 450px){
+    
+    .more .inForm input{
+        padding: 10px;
+        margin: 30px;
+        width: 200px;
+        text-align: center;
+    
+    }
 }

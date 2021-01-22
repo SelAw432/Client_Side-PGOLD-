@@ -5,14 +5,37 @@ document.addEventListener('DOMContentLoaded', ()=> {
     
 })
 
+var Graph;
+
+
 class Info {
-    constructor(url,age) {
-        this.url = url;
+    constructor(urlCase,age,urlAid) {
+        this.urlCase = urlCase;
         this.age = age;
+        this.urlAid = urlAid
 }   
 
-    getData(){
-        fetch(this.url)
+    getData(area){
+        fetch(this.urlAid)
+        .then(data => {
+            return data.json()
+        })
+        .then(json =>{
+            var i;
+
+            var lists = document.getElementById("hospitals");
+            var hospital = ""
+            for (i = 0; i < json[area].length; i ++){
+                var hospitalList = json[area][i];
+                hospital += "<li>" + hospitalList + "</li>"
+
+            }
+
+                 
+            lists.innerHTML = hospital;
+        })
+
+        fetch(this.urlCase)
         .then(data => {
             return data.json()
         })
@@ -30,7 +53,7 @@ class Info {
                             recovery.push(json[i].recovery);
                             deaths.push(json[i].deaths)
                             }
-
+            
             
             makeChart(Cases,date)
 
@@ -76,10 +99,14 @@ class Info {
     }   
 }
 
+
+
+
 function makeChart(Cases,date){
 
+    
     var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
+    var Graph = new Chart(ctx, {
         type: 'line',
         data: {
             labels: date,
@@ -102,8 +129,10 @@ function makeChart(Cases,date){
             }
         }
     });
-   };
     
+   };
+
+   
 makeChart()
 
 
@@ -115,43 +144,41 @@ const getUserInfo = (ev) =>{
         area: document.getElementById('inputGroupSelect01').value
     }
 
-    
-
     if (UserInfo.area == 1){
-        new Info('Areas/northeast.json',UserInfo.age).getData()
+        new Info('Areas/northeast.json',UserInfo.age,'Areas/hospitals.json').getData('northeast')
     }
 
     if (UserInfo.area == 2){
-        new Info('Areas/northwest.json',UserInfo.age).getData()
+        new Info('Areas/northwest.json',UserInfo.age,'Areas/hospitals.json').getData('northwest')
     }
 
     if (UserInfo.area == 3){
-        new Info('Areas/yorkshire.json',UserInfo.age).getData()
+        new Info('Areas/yorkshire.json',UserInfo.age,'Areas/hospitals.json').getData('yorkshire')
        
     }
 
     if (UserInfo.area == 4){
-        new Info('Areas/westmidlands.json',UserInfo.age).getData()
+        new Info('Areas/westmidlands.json',UserInfo.age,'Areas/hospitals.json').getData('westmidlands')
     }
 
     if (UserInfo.area == 5){
-        new Info('Areas/eastmidlands.json',UserInfo.age).getData()
+        new Info('Areas/eastmidlands.json',UserInfo.age,'Areas/hospitals.json').getData('eastmidlands')
     }
 
     if (UserInfo.area == 6){
-        new Info('Areas/eastofengland.json',UserInfo.age).getData()
+        new Info('Areas/eastofengland.json',UserInfo.age,'Areas/hospitals.json').getData('eastofengland')
     }
 
     if (UserInfo.area == 7){
-        new Info('Areas/london.json',UserInfo.age).getData()
+        new Info('Areas/london.json',UserInfo.age,'Areas/hospitals.json').getData('london')
     }
 
     if (UserInfo.area == 8){
-        new Info('Areas/southeast.json',UserInfo.age).getData()
+        new Info('Areas/southeast.json',UserInfo.age,'Areas/hospitals.json').getData('southeast')
     }
 
     if (UserInfo.area == 9){
-        new Info('Areas/southwest.json',UserInfo.age).getData()
+        new Info('Areas/southwest.json',UserInfo.age,'Areas/hospitals.json').getData('southwest')
     }
 }
 
