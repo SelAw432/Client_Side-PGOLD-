@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: indexScript.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: indexScript.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// ____________________________Scrolling Reveal Functionality__________________________
+
+const Scroll = window.requestAnimationFrame ||
+    function( callback ) {
+    	window.setTimeout( callback, 1000 / 60 );
+    };
+
+/**
+ * Looks for elements we want to appear on scroll.
+ * @type {HTMLElement}
+ */
+const elementsToShow = document.querySelectorAll( ".scrolling" );
+
+/**
+ * @description
+ * Loops through elements and checks if they are visible.
+ * If element is in view port it appends a class to add some css animations.
+ * @function loop
+ */
+function loop() {
+  elementsToShow.forEach( ( element ) => {
+    if ( isElementInViewport( element ) ) {
+      element.classList.add( "is-visible" );
+    } else {
+      element.classList.remove( "is-visible" );
+    }
+  } );
+  Scroll( loop );
+}
+
+loop();
+
+/**
+ * Function is used to check it the paricular element is within a specified viewport
+ * @param {HTMLElement} element - Calls HTMLelement
+ * @returns Returns true if element is on screen
+ */
+function isElementInViewport( element ) {
+  /**
+   * Checks to see if jQuery is defined
+   */
+  if ( typeof jQuery === "function" &amp;&amp; element instanceof jQuery ) {
+    element = element[ 0 ];
+  }
+  /**
+   * Returns size of element and position relative to viewport
+   * @type {Object} 
+   */
+  const rect = element.getBoundingClientRect();
+
+  /**
+   * Does checks which returns true if element is on the screen and in the viewport
+   */
+  return ( ( rect.top &lt;= 0 &amp;&amp; rect.bottom >= 0 ) ||
+    ( rect.bottom >= ( window.innerHeight || document.documentElement.clientHeight ) ) &amp;&amp;
+    ( rect.top &lt;= ( window.innerHeight || document.documentElement.clientHeight ) ) ||
+    ( rect.top >= 0 &amp;&amp; rect.bottom &lt;= ( window.innerHeight || document.documentElement.clientHeight ) )
+
+  );
+}
+
+// ________________________________________D3 Graphing________________________________________
+/**
+ * Extracts the value for deaths recorded from the Object.
+ * @param {Object} d -Contain the data needed to plot the graph
+ */
+let yValue = ( d ) => d.deaths;
+/**
+ * String label for y-axis
+ * @type {string}
+ */
+let ylabl = "death";
+
+/**
+ * Creates the Graph Using data extracted from JSON file.
+ * @param {Object} data -Contains data needed to plot the graph.
+ * @param {string} ylabl - Represents the label for the y-axis.
+ */
+const create = ( data, ylabl ) => {
+  /**
+   * Width of the canvas.
+   * @type {number}
+   */
+  const width = 800;
+  /**
+   * Height of the canvas.
+   * @type {number}
+   */
+  const height = 400;
+  /**
+   * Define the margin value of the canvas.
+   * @type {Object}
+   */
+  const margin = { top: 30, right: 0, bottom: 30, left: 40 };
+
+  /**
+   * @description
+   * Add SVG property to the body.
+   * Create canvas for the graph.
+   */
+  const svg = d3.select( ".svg" )
+    .append( "svg" )
+    .attr( "viewBox", [ 0, 0, width, height ] )
+    .attr( "width", width - margin.left - margin.bottom )
+    .attr( "height", height - margin.top - margin.bottom )
+    .attr( "class", "chartbox" );
+
+  /**
+   * @description
+   * Scales the input data of the y-axis.
+   */
+  const yScale = d3.scaleLinear()
+    .domain( [ 0, d3.max( data, yValue ) ] )
+    .range( [ height - margin.bottom, margin.top ] );
+
+  /**
+   * Scales the input data of the y-axis.
+   */
+  const xScale = d3.scaleBand()
+    .domain( d3.range( data.length ) )
+    .range( [ margin.left, width - margin.right ] )
+    .padding( 0.1 );
+
+  /**
+   * Draw the xAxis with ticks.
+   * @param {Object} g -Groups the svg properties.
+   */
+  function xAxis( g ) {
+    g.call( d3.axisBottom( xScale ).tickFormat( ( i ) => data[ i ].month ) )
+      .attr( "transform", `translate(0,${height - margin.bottom})` )
+      .attr( "font-size", "5px" );
+
+  }
+  /**
+   * Draw the yAxis with ticks
+   * @param {Object} g -Groups the svg shapes
+   */
+  function yAxis( g ) {
+    g.call( d3.axisLeft( yScale ).ticks( null, data.format ) )
+      .attr( "transform", `translate(${margin.left},0)` )
+      .attr( "font-size", "5px" );
+
+  }
+
+  /**
+   * @description
+   * Add the g property to the graph
+   * Draw the graph with the data extracted from JSON object
+   */
+  svg.append( "g" )
+    .attr( "fill", "rgb(255, 229, 157)" )
+    .selectAll( "rect" )
+    .data( data )
+    .join( "rect" )
+    .attr( "x", ( d, i ) => xScale( i ) )
+    .attr( "y", ( d ) => yScale( yValue( d ) ) )
+    .transition()
+    .duration( 1000 )
+    .attr( "height", ( d ) => yScale( 0 ) - yScale( yValue( d ) ) )
+    .attr( "width", xScale.bandwidth() )
+    .attr( "class", "rectangle" );
+
+  /**
+   * Label the x-axis
+   */
+  svg.append( "text" )
+    .attr( "class", "x label" )
+    .attr( "text-anchor", "end" )
+    .attr( "x", width )
+    .attr( "y", height - 2 )
+    .text( "months" );
+
+  /**
+  * Label the y-axis
+  */
+  svg.append( "text" )
+    .attr( "class", "y label" )
+    .attr( "text-anchor", "end" )
+    .attr( "y", 1 )
+    .attr( "dy", ".75em" )
+    .attr( "transform", "rotate(-90)" )
+    .text( ylabl );
+
+  /**
+   * Adds animation to the x Axis
+   */
+  svg.append( "g" )
+    .transition().duration( 1000 )
+    .attr( "class", "x Axis" )
+    .call( xAxis );
+
+  /**
+   * Adds animation to the y Axis
+   */
+  svg.append( "g" )
+    .transition().duration( 1000 )
+    .attr( "class", "y Axis" )
+    .call( yAxis );
+
+};
+
+/**
+ * Fetch data needed to draw graph in json format
+ * Trigger callback to draw graph when data is finished loading
+ * @function fetch 
+ */
+fetch( "CovidData.json" )
+  .then( ( data ) => data.json() )
+  .then( ( json ) => {
+    create( json, ylabl );
+  } );
+
+/**
+ * Function is triggered when user requests for chart displaying trend of COVID cases.
+ * Retrieves the data and draws the corresponding graph Graph. 
+ * @function cases
+ */
+function cases() {
+  yValue = ( d ) => d.cases;
+  ylabl = "cases";
+
+  /**
+   * @description
+   * Removes old Graph to avoid drawing new graph on it
+   */
+  d3.select( "svg" ).remove();
+  /**
+   * @description
+   * Fetch Data and draw grapg
+   */
+  fetch( "CovidData.json" )
+    .then( ( data ) => data.json() )
+    .then( ( json ) => {
+      create( json, ylabl );
+    } );
+}
+
+/**
+ * Function is triggered when user requests for chart displaying trend of COVID deaths.
+ * Retrieves the data and draws the corresponding graph Graph. 
+ * @function deaths
+ */
+function deaths() {
+  yValue = ( d ) => d.deaths;
+  ylabl = "deaths";
+
+  d3.select( "svg" ).remove();
+  fetch( "CovidData.json" )
+    .then( ( data ) => data.json() )
+    .then( ( json ) => {
+      create( json, ylabl );
+    } );
+}
+
+/**
+ * Function is triggered when user requests for chart displaying trend of COVID recoveries.
+ * Retrieves the data and draws the corresponding graph Graph. 
+ * @function recovery
+ */
+function recovery() {
+  yValue = ( d ) => d.recovery;
+  ylabl = "recovery";
+
+  d3.select( "svg" ).remove();
+  fetch( "CovidData.json" )
+    .then( ( data ) => data.json() )
+    .then( ( json ) => {
+      create( json, ylabl );
+    } );
+}
+
+/**
+ * @license https://opensource.org/licenses/MIT
+ * [Source Code] https://gist.github.com/JoeSz/eadf20f8517d499e4c836b0f3302d5d3
+ * [Source Code] https://observablehq.com/@d3/bar-chart
+ */
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#cases">cases</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#deaths">deaths</a></li><li><a href="global.html#elementsToShow">elementsToShow</a></li><li><a href="global.html#fetch">fetch</a></li><li><a href="global.html#isElementInViewport">isElementInViewport</a></li><li><a href="global.html#loop">loop</a></li><li><a href="global.html#recovery">recovery</a></li><li><a href="global.html#ylabl">ylabl</a></li><li><a href="global.html#yValue">yValue</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sun Jan 24 2021 22:54:36 GMT+0000 (Greenwich Mean Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

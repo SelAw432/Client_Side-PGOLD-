@@ -23,6 +23,12 @@
   },
   "homepage": "https://github.com/SelAw432/Client_Side-PGOLD-#readme",
   "devDependencies": {
-    "eslint": "^7.14.0"
+    "@d3banking/eslint-config": "^20.4.1",
+    "eslint": "^7.18.0",
+    "eslint-config-jquery": "^3.0.0",
+    "eslint-plugin-rc-leaflet": "^1.4.0"
+  },
+  "dependencies": {
+    "jsdoc": "^3.6.6"
   }
 }
