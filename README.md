@@ -24,15 +24,21 @@ The main home page is 'index.html'.  There are 5 subfolders
      gh repo clone SelAw432/Client_Side-PGOLD-
 
 ##### 2. Cd into the project directory
-
+    cd Client_Side-PGOLD-
+    
 ##### 3. Run the following command
 
-##### 4. Open up web browser and go to home to navigate the website:
+    python3 -m http.server
 
- 
+##### 4. Open up web browser and go to localhost:
+    
+    http://0.0.0.0:8000/
 
+##### 5. Navigate to home page:
+    
+    http://0.0.0.0:8000/home
 
-**IMPORTANT**: Please open this website using a local server. 
+**IMPORTANT**: Please open this website using a localhost server to avoid CORS errors. 
 
 ## index.html (HOME PAGE)
 
